@@ -85,7 +85,7 @@ export class Backstage implements SpecialItem{
 
   updateQuality(): void {
     if(this.item.sellIn === 0){
-      this.item.quality = 0;
+      this.item.quality = minQuality;
     }else{
       const incrementAmount = this.getBackStageIncrement()
       for(let k=0; k<incrementAmount; k++){
@@ -123,7 +123,7 @@ export class ConjuredItem implements SpecialItem{
 
   updateQuality(): void {
     for(let k=0; k<this.decConst; k++){
-      if(this.item.quality>0){
+      if(this.item.quality>minQuality){
         this.item.quality = this.item.quality - 1;
       }
     }
